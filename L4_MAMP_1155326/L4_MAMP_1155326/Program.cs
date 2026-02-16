@@ -40,5 +40,6 @@ class Program {
         int numero;
         Console.WriteLine("Ingresar un número: ");
         numero = Console.ReadLine();
+        //El error que marca es que un string no puede convertirse explícitamente en int, y como ReadLine siempre es un string, el número ingresado no será tomado como valor numérico.
     }
 }
