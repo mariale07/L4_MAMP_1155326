@@ -68,5 +68,18 @@ class Program {
         //Salida de datos
         Console.WriteLine("El resultado es: " + cadena);
         Console.ReadLine();
+
+        //EJERCICIO 7 - Reto Final - Calculadora de IVA
+        //Entrada de usuario
+        Console.WriteLine("Ingrese el precio del producto: ");
+        string entradaPrecio = Console.ReadLine();
+        double precioDouble = Convert.ToDouble(entradaPrecio);
+        //IVA}
+        double iva = precioDouble * 0.21;
+        double totalConDecimales = precioDouble + iva;
+        int total = (int)totalConDecimales;
+        //Salida de datos
+        Console.WriteLine("El total a pagar es: " + total);
+        Console.ReadLine();
     }
 }
