@@ -33,6 +33,7 @@ class Program {
         precioRedondeado = (int)precioExacto;
         //Salida de datos
         Console.WriteLine("El precio exacto es: " + precioExacto + ", el precio redondeado es: " + precioRedondeado);
+        Console.ReadLine();
         //Los decimales desaparece, no se aproxima el número.
 
         //EJERCICIO 4 - De un texto a un número (Parse)
@@ -43,7 +44,21 @@ class Program {
         string entradaUsuario = Console.ReadLine();
         numero = int.Parse(entradaUsuario);
         int resultado = numero + 5;
+        //Salida de datos
         Console.WriteLine("El resultado es: " + resultado);
+        Console.ReadLine();
+
+        //EJEERCICIO 5 - El uso de la clase "Convert"
+        //Declaración de variables
+        string valorTexto = "true";
+        bool valorBooleano = Convert.ToBoolean(valorTexto);
+        //Mi turno
+        string valorDecimal = "25.5";
+        double valorDouble = Convert.ToDouble(valorDecimal);
+        //Salida de datos
+        Console.WriteLine("El resultado del ejemplo es: " + valorBooleano);
+        Console.ReadLine();
+        Console.WriteLine("El resultado de mi ejercicio es: " + valorDecimal);
         Console.ReadLine();
     }
 }
