@@ -33,5 +33,6 @@ class Program {
         precioRedondeado = (int)precioExacto;
         //Salida de datos
         Console.WriteLine("El precio exacto es: " + precioExacto + ", el precio redondeado es: " + precioRedondeado);
+        //Los decimales desaparece, no se aproxima el número.
     }
 }
