@@ -25,5 +25,13 @@ class Program {
         //Salida de datos
         Console.WriteLine("El número decimal es: " + numeroDecimal);
         Console.ReadLine();
+
+        //EJERCICIO 3 - Casting explícito (pérdida de precisión)
+        //Declaración de variables
+        double precioExacto = 45.89;
+        int precioRedondeado;
+        precioRedondeado = (int)precioExacto;
+        //Salida de datos
+        Console.WriteLine("El precio exacto es: " + precioExacto + ", el precio redondeado es: " + precioRedondeado);
     }
 }
