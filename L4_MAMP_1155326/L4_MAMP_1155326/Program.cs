@@ -34,5 +34,11 @@ class Program {
         //Salida de datos
         Console.WriteLine("El precio exacto es: " + precioExacto + ", el precio redondeado es: " + precioRedondeado);
         //Los decimales desaparece, no se aproxima el número.
+
+        //EJERCICIO 4 - De un texto a un número (Parse)
+        //Declaración de variables
+        int numero;
+        Console.WriteLine("Ingresar un número: ");
+        numero = Console.ReadLine();
     }
 }
