@@ -39,7 +39,11 @@ class Program {
         //Declaración de variables
         int numero;
         Console.WriteLine("Ingresar un número: ");
-        numero = Console.ReadLine();
         //El error que marca es que un string no puede convertirse explícitamente en int, y como ReadLine siempre es un string, el número ingresado no será tomado como valor numérico.
+        string entradaUsuario = Console.ReadLine();
+        numero = int.Parse(entradaUsuario);
+        int resultado = numero + 5;
+        Console.WriteLine("El resultado es: " + resultado);
+        Console.ReadLine();
     }
 }
