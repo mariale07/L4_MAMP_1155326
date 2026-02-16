@@ -60,5 +60,13 @@ class Program {
         Console.ReadLine();
         Console.WriteLine("El resultado de mi ejercicio es: " + valorDecimal);
         Console.ReadLine();
+
+        //EJERCICIO 6 - El proceso inverso (numero a texto)
+        //Declaración de variable
+        double pi = 3.14159265;
+        string cadena = pi.ToString("F2");
+        //Salida de datos
+        Console.WriteLine("El resultado es: " + cadena);
+        Console.ReadLine();
     }
 }
