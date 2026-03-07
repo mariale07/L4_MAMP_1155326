@@ -37,7 +37,7 @@ Console.WriteLine("EJERCICIO 2 - Do-WHILE");
 Console.WriteLine("------------------------");
 
 int num;
-int a = 1;
+int i = 1;
 
 Console.WriteLine("Ingrese un número entero positivo: ");
 num = int.Parse(Console.ReadLine());
@@ -46,10 +46,34 @@ Console.WriteLine("Los divisores de " + num + " serían: ");
 
 do
 {
-    if (num % a == 0)
+    if (num % i == 0)
     {
-        Console.WriteLine(a);
+        Console.WriteLine(i);
     }
-    a = a + 1;
-} while (a <= num);
+    i = i + 1;
+} while (i <= num);
+Console.ReadLine();
+
+Console.WriteLine("------------------------");
+Console.WriteLine("EJERCICIO 3 - FOR");
+Console.WriteLine("------------------------");
+
+int n;
+Console.WriteLine("Ingrese la cantidad de números de Fibonacci que desea: ");
+n = int.Parse(Console.ReadLine());
+
+int a = 0;
+int b = 1;
+int proximo;
+
+Console.WriteLine("La serie de Fibonnacci es: ");
+
+for(int x = 1; x <= n; x++)
+{
+    Console.WriteLine(a);
+
+    proximo = a + b;
+    a = b;
+    b = proximo;
+}
 Console.ReadLine();
