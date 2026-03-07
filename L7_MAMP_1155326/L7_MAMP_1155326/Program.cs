@@ -78,3 +78,18 @@ for(int x = 1; x <= n; x++)
 }
 Console.ReadLine();
 
+Console.WriteLine("------------------------");
+Console.WriteLine("EJERCICIO 3 - CICLOS ANIDADOS");
+Console.WriteLine("------------------------");
+
+for (int m = 1; m<=12; m++)
+{
+    Console.WriteLine("Tabla de multiplicar del " + m);
+    for (int l = 1; l <= 10; l++)
+    {
+        int resultado = m * l;
+        Console.WriteLine(m + " x " + l + " = " + resultado);
+    }
+    Console.WriteLine();
+}
+Console.ReadLine();
