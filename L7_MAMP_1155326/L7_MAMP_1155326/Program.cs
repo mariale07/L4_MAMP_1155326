@@ -12,7 +12,7 @@ string nom = "Maria Alejandra Montoya Pineda";
 int carnet = 1155326;
 int indice = 1;
 
-Console.WriteLine("Nombre: " + nom + "Carnet: " + carnet.ToString());
+Console.WriteLine("Nombre: " + nom + " | Carnet: " + carnet.ToString());
 
 while (indice <= 20)
 {
@@ -30,4 +30,26 @@ while (indice <= 20)
     indice = indice + 1;
 }
 Console.ForegroundColor = ConsoleColor.White;
+Console.ReadLine();
+
+Console.WriteLine("------------------------");
+Console.WriteLine("EJERCICIO 2 - Do-WHILE");
+Console.WriteLine("------------------------");
+
+int num;
+int a = 1;
+
+Console.WriteLine("Ingrese un número entero positivo: ");
+num = int.Parse(Console.ReadLine());
+
+Console.WriteLine("Los divisores de " + num + " serían: ");
+
+do
+{
+    if (num % a == 0)
+    {
+        Console.WriteLine(a);
+    }
+    a = a + 1;
+} while (a <= num);
 Console.ReadLine();
