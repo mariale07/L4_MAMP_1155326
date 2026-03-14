@@ -37,24 +37,55 @@ Console.ReadLine();
 Console.WriteLine("--------------------------------");
 Console.WriteLine("Ejercicio 2");
 Console.WriteLine("--------------------------------");
-for (int j=1; j<=100; j++)
+for (int j = 1; j <= 100; j++)
 {
-    if(j % 2==0 && j % 7 == 0)
+    if (j % 2 == 0 && j % 7 == 0)
     {
         Console.WriteLine(j + " = ParSiete");
     }
     else if (j % 2 == 0)
     {
-    Console.WriteLine(j + " = Par");
-    } else if(j % 7 == 0){
-    Console.WriteLine(j + " = Siete");
+        Console.WriteLine(j + " = Par");
+    }
+    else if (j % 7 == 0)
+    {
+        Console.WriteLine(j + " = Siete");
     }
     else
     {
-    Console.WriteLine(j + " = No es múltiplo de 2 ni de 7.");
+        Console.WriteLine(j + " = No es múltiplo de 2 ni de 7.");
     }
 }
+Console.ReadLine();
 
 Console.WriteLine("--------------------------------");
 Console.WriteLine("Ejercicio 3");
 Console.WriteLine("--------------------------------");
+int cliente_descuento = 0;
+double total_ventas = 0;
+
+for (int a=1; a<=10; a++)
+{
+    Console.WriteLine("Ingrese el monto de compra del cliente: ");
+    double compra = double.Parse(Console.ReadLine());
+
+    double descuento = 0;
+    double total_pagar;
+
+    if (compra > 300)
+    {
+        descuento = compra * 0.05;
+        cliente_descuento++;
+    }
+    else if (compra > 700)
+    {
+        descuento = compra * 0.12;
+        cliente_descuento++;
+    }
+    total_pagar = compra - descuento;
+    Console.WriteLine("El total a pagar del cliente " + a + ": " + total_pagar);
+    total_ventas = total_ventas + total_pagar;
+}
+Console.WriteLine("Clientes con descuento: " + cliente_descuento);
+Console.WriteLine("Total de ventas del día: " + total_ventas);
+Console.ReadLine();
