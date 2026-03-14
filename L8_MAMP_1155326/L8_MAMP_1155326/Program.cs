@@ -1,0 +1,35 @@
+﻿// Entrada de usuario
+Console.WriteLine("¿Cómo te llamas?");
+string nombre = Console.ReadLine();
+//Salida de datos
+Console.WriteLine("Hola " + nombre + " ¡Bienvenido a C#!");
+Console.ReadLine();
+Console.WriteLine("--------------------------------");
+Console.WriteLine("Ejercicio 1");
+Console.WriteLine("--------------------------------");
+int num;
+int suma = 0;
+Console.WriteLine("Ingrese un número: ");
+num = int.Parse(Console.ReadLine());
+int mayor = num;
+int menor = num;
+suma = num;
+for (int i = 2; i <= 20; i++)
+{
+    Console.WriteLine("Ingrese otro número: ");
+    num = int.Parse(Console.ReadLine());
+    if (num > mayor)
+    {
+        mayor = num;
+    }
+    else if (num < menor)
+    {
+        menor = num;
+    }
+    suma = suma + num;
+}
+double promedio = suma / 20;
+Console.WriteLine("El número mayor es: " + mayor);
+Console.WriteLine("El número menor es: " + menor);
+Console.WriteLine("El promedio es: " + promedio);
+Console.ReadLine();
