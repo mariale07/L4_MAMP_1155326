@@ -64,7 +64,7 @@ Console.WriteLine("--------------------------------");
 int cliente_descuento = 0;
 double total_ventas = 0;
 
-for (int a=1; a<=10; a++)
+for (int a = 1; a <= 10; a++)
 {
     Console.WriteLine("Ingrese el monto de compra del cliente: ");
     double compra = double.Parse(Console.ReadLine());
@@ -89,3 +89,57 @@ for (int a=1; a<=10; a++)
 Console.WriteLine("Clientes con descuento: " + cliente_descuento);
 Console.WriteLine("Total de ventas del día: " + total_ventas);
 Console.ReadLine();
+
+Console.WriteLine("--------------------------------");
+Console.WriteLine("Ejercicio 4");
+Console.WriteLine("--------------------------------");
+
+Console.WriteLine("Ingrese un número entero: ");
+int numero = int.Parse(Console.ReadLine());
+
+Console.WriteLine("Las opciones son: ");
+Console.WriteLine("1. Mostrar los números desde el número ingresado hasta 1");
+Console.WriteLine("2. Mostrar los múltiplos de 3 hasta el número ingresado");
+Console.WriteLine("3. Mostrar los múltiplos de 5 hasta el número ingresado");
+Console.WriteLine("Ingrese la opción: ");
+
+int opcion = int.Parse(Console.ReadLine());
+Console.WriteLine("------------------------");
+
+if (opcion==1)
+{
+    int b = numero;
+    while(b>=1)
+    {
+        Console.WriteLine(b);
+        b--;
+    }
+}
+else if (opcion==2)
+{
+    int b = 1;
+    while(b<=numero)
+    {
+        if (b % 3 == 0)
+        {
+            Console.WriteLine(b);
+        }
+        b++;
+    }
+}
+else if(opcion==3)
+    {
+    int b = 1;
+    while(b<= numero)
+    {
+        if(b%5==0)
+        {
+            Console.WriteLine(b);
+        }
+        b++;
+    }
+}
+else
+{
+    Console.WriteLine("Opción no válida.");
+}
