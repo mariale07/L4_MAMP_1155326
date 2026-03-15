@@ -104,21 +104,21 @@ Console.WriteLine("3. Mostrar los múltiplos de 5 hasta el número ingresado");
 Console.WriteLine("Ingrese la opción: ");
 
 int opcion = int.Parse(Console.ReadLine());
-Console.WriteLine("------------------------");
+Console.WriteLine("=========================");
 
-if (opcion==1)
+if (opcion == 1)
 {
     int b = numero;
-    while(b>=1)
+    while (b >= 1)
     {
         Console.WriteLine(b);
         b--;
     }
 }
-else if (opcion==2)
+else if (opcion == 2)
 {
     int b = 1;
-    while(b<=numero)
+    while (b <= numero)
     {
         if (b % 3 == 0)
         {
@@ -127,12 +127,12 @@ else if (opcion==2)
         b++;
     }
 }
-else if(opcion==3)
-    {
+else if (opcion == 3)
+{
     int b = 1;
-    while(b<= numero)
+    while (b <= numero)
     {
-        if(b%5==0)
+        if (b % 5 == 0)
         {
             Console.WriteLine(b);
         }
@@ -142,4 +142,22 @@ else if(opcion==3)
 else
 {
     Console.WriteLine("Opción no válida.");
+}
+
+Console.WriteLine("--------------------------------");
+Console.WriteLine("Ejercicio 5");
+Console.WriteLine("--------------------------------");
+
+Console.WriteLine("Ingrese el número de filas: ");
+int filas = int.Parse(Console.ReadLine());
+
+Console.WriteLine("=========================");
+
+for (int c=1; c<= filas; c++)
+{
+    for (int d = 1; d <= c; d++)
+    {
+        Console.Write("*");
+    }
+    Console.WriteLine();
 }
