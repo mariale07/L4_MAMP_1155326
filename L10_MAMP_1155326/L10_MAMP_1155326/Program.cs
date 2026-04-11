@@ -18,7 +18,7 @@ class Program
         Console.WriteLine("La suma de los dígitos es: " + resultado);
 
         //EJERCICIO 2
-        Console.WriteLine("Ingrese su primer nombre");
+        Console.WriteLine("Ingrese su primer nombre: ");
         String nombre1 = Console.ReadLine();
         Console.WriteLine("Ingrse su segundo nombre: ");
         string nombre2 = Console.ReadLine();
@@ -30,7 +30,17 @@ class Program
         string correo = generar_correo(nombre1, nombre2, apellido1, apellido2);
 
         Console.WriteLine("Correo institucional: " + correo);
+
+        //EJERCICIO 3
+        Console.WriteLine("Ingrese una temperatura en Celsius: ");
+        string celsius = Console.ReadLine();
+
+        double fahrenheit = 0;
+        string respuesta = temperatura(celsius, ref fahrenheit);
+
+        Console.WriteLine(respuesta);
     }
+
     //Función - ejercicio 1
     static int sumardigitos(int numero)
     {
@@ -43,6 +53,7 @@ class Program
         }
         return suma;
     }
+
     //Función - ejercicio 2
     static string generar_correo(string nombre1, string nombre2, string apellido1, string apellido2)
     {
@@ -52,4 +63,13 @@ class Program
         return correo.ToLower();
     }
 
+    //Integración - ejercicio 3
+    static string temperatura(string celsius, ref double fahrenheit)
+    {
+        string num = celsius.Replace("C = ", "");
+        double tempC = double.Parse(num);
+        fahrenheit = (tempC * 9 / 5) + 32;
+
+        return celsius + "°C -->" + "°F = " + fahrenheit;
+    }
 }
