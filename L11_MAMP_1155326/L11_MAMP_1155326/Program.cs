@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel;
+
 class Program
 {
     static void Main()
@@ -10,13 +12,14 @@ class Program
         Console.WriteLine("Hola, " + nombre + " ¡Bienvenido a C#!");
 
         //EJERCICIO 1
+        Console.WriteLine("--------------Ejercicio 1--------------");
         Console.WriteLine("Ingrese una palabra: ");
         string palabra = Console.ReadLine().ToLower();
 
         bool palindromo = true; //Se asumirá que es verdadero
         int longitud = palabra.Length; //cuenta las letras
 
-        for (int i=0; i < longitud/2; i++) 
+        for (int i = 0; i < longitud / 2; i++)
         {
             if (palabra[i] != palabra[longitud - 1 - i]) //Sirve para comparar la primera letra y recorrer desde atras para comparar la última
             {
@@ -33,5 +36,116 @@ class Program
         }
 
         //EJERCICIO 2
+        Console.WriteLine("--------------Ejercicio 2--------------");
+        //arreglos
+        string[] espanol = { "rojo", "azul", "amarillo", "blanco", "verde" };
+        string[] ingles = { "red", "blue", "yellow", "white", "green" };
+        string[] italiano = { "rosso", "blu", "giallo", "bianco", "verde" };
+
+        int opcion;
+
+        //menú
+        do
+        {
+            Console.WriteLine("Menú");
+            Console.WriteLine("1. Practicar lección");
+            Console.WriteLine("2. Terminar lección");
+            Console.WriteLine("Seleccione una opcion: ");
+            opcion = int.Parse(Console.ReadLine());
+
+            if (opcion == 1)
+            {
+                Console.WriteLine("Ingrese una palabra en español: ");
+                string palabras = Console.ReadLine().ToLower();
+
+                bool encontrada = false; //es falsa porque aun no se ha buscado
+
+                for (int i = 0; i < espanol.Length; i++)
+                {
+                    if (palabras == espanol[i]) //Recorre el arreglo
+                    {
+                        Console.WriteLine("Ingles: " + ingles[i]);
+                        Console.WriteLine("Italiano: " + italiano[i]);
+                        encontrada = true;
+                    }
+                }
+                if (encontrada == false) //Si el valor de encontrada sigue siendo falso
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Palabra no encontrada");
+                    Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+            }
+        }
+        while (opcion != 2); //Cierra el programa
+        Console.WriteLine("Lección finalizada");
+
+
+        //EJERCICIO 3
+        Console.WriteLine("--------------Ejercicio 3--------------");
+        //arreglo
+        int[] calificaciones = new int[10];
+        Random random = new Random();
+
+        for (int i =0;  i < calificaciones.Length; i++)
+        {
+            calificaciones[i] = random.Next(50, 101);
+        }
+        int opciones;
+
+        do
+        {
+            Console.WriteLine("Menú");
+            Console.WriteLine("1. Reporte de rendimiento");
+            Console.WriteLine("2. Estadísticas");
+            Console.WriteLine("3. Salir");
+            Console.WriteLine("Seleccione una opción: ");
+            opciones = int.Parse(Console.ReadLine());
+
+            if (opciones == 1)
+            {
+                Console.WriteLine("Reporte");
+                Console.WriteLine();
+                for (int i = 0; i < 10; i++)
+                {
+                    int nota = calificaciones[i];
+                    if (nota >= 50 && nota <= 64)
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                    else if (nota >= 65 && nota <= 79)
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                    else
+                        Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine(nota);
+                }
+                Console.WriteLine();
+                Console.ResetColor();
+            }
+            else if (opciones == 2)
+            { 
+                int suma = 0;
+                int mayor = calificaciones[0];
+                int menor = calificaciones[0];
+
+                for (int i = 0; i < 10; i++)
+                {
+                    suma = suma + calificaciones[i];
+                    if (calificaciones[i] > mayor)
+                        mayor = calificaciones[i];
+                    if (calificaciones[i] < menor)
+                        menor = calificaciones[i];
+                }
+                double promedio = suma / 10;
+
+                Console.WriteLine("Estadísticas");
+                Console.WriteLine();
+                Console.WriteLine("Promedio: " + promedio);
+                Console.WriteLine("Nota más alta: " + mayor);
+                Console.WriteLine("Nota más baja: " + menor);
+                Console.WriteLine();
+
+            }
+        } while (opciones != 3);
+        Console.WriteLine("Programa finalizado");
     }
 }
