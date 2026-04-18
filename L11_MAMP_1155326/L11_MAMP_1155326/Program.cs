@@ -12,7 +12,9 @@ class Program
         Console.WriteLine("Hola, " + nombre + " ¡Bienvenido a C#!");
 
         //EJERCICIO 1
+        Console.WriteLine();
         Console.WriteLine("--------------Ejercicio 1--------------");
+        Console.WriteLine();
         Console.WriteLine("Ingrese una palabra: ");
         string palabra = Console.ReadLine().ToLower();
 
@@ -36,7 +38,9 @@ class Program
         }
 
         //EJERCICIO 2
+        Console.WriteLine();
         Console.WriteLine("--------------Ejercicio 2--------------");
+        Console.WriteLine();
         //arreglos
         string[] espanol = { "rojo", "azul", "amarillo", "blanco", "verde" };
         string[] ingles = { "red", "blue", "yellow", "white", "green" };
@@ -83,7 +87,9 @@ class Program
 
 
         //EJERCICIO 3
+        Console.WriteLine();
         Console.WriteLine("--------------Ejercicio 3--------------");
+        Console.WriteLine();
         //arreglo
         int[] calificaciones = new int[10];
         Random random = new Random();
@@ -147,5 +153,56 @@ class Program
             }
         } while (opciones != 3);
         Console.WriteLine("Programa finalizado");
+
+        //EJERCICIO 4
+        Console.WriteLine();
+        Console.WriteLine("--------------Ejercicio 4--------------");
+        Console.WriteLine();
+        //arreglos
+        string[] nombres = { "Ana", "Mario", "Saúl", "Karla", "María", "José" };
+        double[] salario_X_hora = {100, 125.50, 98.65, 125, 132.50, 102.50};
+        double[] horas_laboradas = new double[6];
+
+        //Para que ingrese las horas
+        for (int i = 0; i <6; i++)
+        {
+            Console.WriteLine("Ingrese horas trabajadas de " + nombres[i] + ":");
+            horas_laboradas[i] = double.Parse(Console.ReadLine());
+        }
+
+        double[] pagos = CalcularPagos(horas_laboradas, salario_X_hora);
+
+        MostrarResultados(nombres, pagos);
+
+    }
+
+    static double[] CalcularPagos(double[] horas_laboradas, double[] salario_X_hora)
+    {
+        double[] pagos = new double[6];
+
+        for (int i= 0; i < 6; i++)
+        {
+            if (horas_laboradas[i] <= 40)
+            {
+                pagos[i] = horas_laboradas[i] * salario_X_hora[i];
+            }
+
+            else
+            {
+                double extras = horas_laboradas[i] - 40;
+                pagos[i] = (40 * salario_X_hora[i]) + (extras * salario_X_hora[i] * 1.5);
+            }
+        }
+        return pagos;
+    }
+
+    static void MostrarResultados(string[] nombres, double[] pagos)
+    {
+        Console.WriteLine("Pagos Semanales");
+
+        for (int i = 0; i < 6; i++)
+        {
+            Console.WriteLine(nombres[i] + ", el salario es de Q" + pagos[i]);
+        }
     }
 }
