@@ -121,7 +121,7 @@ class Program
         {
             return "Avanzado";
         }
-        else if (puntos >=50)
+        else if (puntos >=50 && puntos <= 79)
         {
             return "Intermedio";
         }
