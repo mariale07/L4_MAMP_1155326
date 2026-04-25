@@ -60,11 +60,29 @@ class Program
             Console.WriteLine("El promedio del estudiante es: " + promedio);
         }
 
-        
+
+        //EJERCICIO 4
+        Console.WriteLine();
+        Console.WriteLine("----------Ejercicio 4----------");
+        Console.WriteLine();
+        int[,] num = new int[3, 3];
+
+        llenarMatriz(num);
+
+        bool simetriaEjeY = simetria(num);
+
+        if(simetriaEjeY == false)
+        {
+            Console.WriteLine("La matriz no es simétrica");
+        }
+        else
+        {
+            Console.WriteLine("La matriz es simétrica");
+        }
     }
 
-    //EJERCICIO 1
 
+    //EJERCICIO 1
     static void Llenar(int[,] a)
     {
         for (int i = 0; i < 5; i++)
@@ -113,6 +131,7 @@ class Program
             {
                 Console.WriteLine("Ingrese un número: ");
                 b[i, j] = int.Parse(Console.ReadLine());
+                Console.WriteLine();
             }
         }
     }
@@ -184,5 +203,34 @@ class Program
         {
             return false;
         }
+    }
+
+
+    //EJERCICIO 4
+    static void llenarMatriz(int[,] d)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j=0; j<3; j++)
+            {
+                Console.WriteLine("Ingrese un número: ");
+                d[i, j] = int.Parse(Console.ReadLine());
+            }
+        }
+    }
+
+    static bool simetria(int[,] d)
+    {
+        for(int i=0; i<3; i++)
+        {
+            for(int j=0; j<3; j++)
+            {
+                if (d[i,j] != d[i, 2 - j])
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
