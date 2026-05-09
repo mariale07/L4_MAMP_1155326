@@ -6,6 +6,9 @@ class Program
     static void Main()
     {
         //EJERCICIO 1
+        Console.WriteLine("----------EJERCICIO 1----------");
+        Console.WriteLine();
+
         CuentaBancaria cuenta1 = new CuentaBancaria("Alejandra", "00125", 4000);
         CuentaBancaria cuenta2 = new CuentaBancaria("Luis", "00948", 5000);
 
@@ -29,5 +32,34 @@ class Program
         cuenta2.mostrarInformacion();
         Console.WriteLine("-------------------------------");
         Console.ReadKey();
+
+
+        //EJERCICIO 2
+
+        Console.WriteLine("----------EJERCICIO 2----------");
+        Console.WriteLine();
+
+        Producto producto1 = new Producto("Cereal", 5000, 15);
+        Producto producto2 = new Producto("Manzana", 1500, 10);
+
+        Console.WriteLine("Información inicial: ");
+        producto1.mostrarInformacion();
+        producto2.mostrarInformacion();
+        Console.WriteLine("-------------------------------");
+
+        Console.WriteLine("Operaciones producto 1: ");
+        producto1.vender(4);
+        producto1.reabastecer(8);
+        Console.WriteLine("-------------------------------");
+
+        Console.WriteLine("Operaciones producto 2");
+        producto2.vender(9);
+        producto2.reabastecer(3);
+        Console.WriteLine("-------------------------------");
+
+        Console.WriteLine("Información final");
+        producto1.mostrarInformacion();
+        producto2.mostrarInformacion();
+        Console.WriteLine("-------------------------------");
     }
 }
