@@ -52,10 +52,12 @@ class Program
             {
                 Console.WriteLine();
                 Console.WriteLine("El estudiante aprobó." + (i+1));
+                Console.WriteLine();
             }
             else if (estado == false)
             {
                 Console.WriteLine("El estudiante reprobó");
+                Console.WriteLine();
             }
             Console.WriteLine("El promedio del estudiante es: " + promedio);
         }
@@ -73,10 +75,12 @@ class Program
 
         if(simetriaEjeY == false)
         {
+            Console.WriteLine();
             Console.WriteLine("La matriz no es simétrica");
         }
         else
         {
+            Console.WriteLine();
             Console.WriteLine("La matriz es simétrica");
         }
     }
@@ -174,7 +178,7 @@ class Program
     {
         for (int i=0; i<5; i++)
         {
-            Console.WriteLine("Estudiante " + (i + 1));
+            Console.WriteLine("Estudiante " + (i + 1) + ": ");
             for (int j = 0; j<4; j++)
             {
                 Console.WriteLine("Ingrese la nota del estudiante " + (j + 1) + " : ");
