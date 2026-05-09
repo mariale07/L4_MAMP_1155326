@@ -31,7 +31,6 @@ class Program
         cuenta1.mostrarInformacion();
         cuenta2.mostrarInformacion();
         Console.WriteLine("-------------------------------");
-        Console.ReadKey();
 
 
         //EJERCICIO 2
@@ -61,5 +60,39 @@ class Program
         producto1.mostrarInformacion();
         producto2.mostrarInformacion();
         Console.WriteLine("-------------------------------");
+
+        //EJERCICIO 3
+
+        Console.WriteLine("----------EJERCICIO 2----------");
+        Console.WriteLine();
+
+        decimal[] notas1 = { 89, 43, 67 };
+        decimal[] notas2 = { 50, 99, 64 };
+        Estudiante estudiante1 = new Estudiante("Alejandra", 18, "5to. Bach", notas1);
+        Estudiante estudiante2 = new Estudiante("Cristian", 16, "4to. Bach", notas2);
+
+        Console.WriteLine("Información inicial: ");
+
+        estudiante1.mostrarInformacion();
+        estudiante2.mostrarInformacion();
+        Console.WriteLine("-------------------------------");
+
+        Console.WriteLine("Resultados: ");
+
+        estudiante1.aprobar();
+        estudiante2.aprobar();
+        Console.WriteLine("-------------------------------");
+
+        Console.WriteLine("Agregar nueva nota: ");
+
+        estudiante1.agregarNota(90);
+        Console.WriteLine("-------------------------------");
+
+        Console.WriteLine("Datos actualizados: ");
+        estudiante1.mostrarInformacion();
+        estudiante1.aprobar();
+        Console.WriteLine("-------------------------------");
+
+        Console.ReadKey();
     }
 }
